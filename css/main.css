@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+    margin: 8px 0px;
+    background-color: rgb(59, 153, 67);
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+}
+
+h5 {
+    margin: 25% 0px;
+    display: inline;
+}
+
+body {
+    margin: 0px;
+    min-height: 100vh;
+
+    background-image: url("../img/bg.png");
+	background-attachment: fixed;
+    
+    display: grid;
+    grid-template-rows: 50px auto 50px;
+    grid-gap: 10px;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+}
+
+header {
+	grid-area: header;
+	
+	position: sticky;
+	top: 0px;
+}
+
+header h3 {
+    margin: 0px;
+    background-color: rgb(59, 89, 153);
+    border-radius: 0px 0px 5px 5px;
+    height: 100%;
+    line-height: 50px;
+	font-size: 1.5em;
+}
+
+#formulario {
+    grid-area: main;
+
+    width: 100%;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 8px;
+}
+
+#formulario form {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0px 8px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.425);
+
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+}
+
+#formulario form #nome, #user, #question, #pretencao {
+    width: 100%;
+    min-height: 30px;
+    margin: 0px 0px 5px;
+    padding: 3px;
+    resize: none;
+
+    background-color: #fff;    
+    outline-color: rgb(70, 153, 59);
+    border: none;
+    box-shadow: 3px 3px 10px rgba(0,0,0,.15);
+	transition: 2s;
+}
+
+#formulario form label label {
+    display: block;
+    height: 25px;
+}
+
+#formulario form > input {
+    margin: 8px 0px;
+    background-color: rgb(153, 59, 59);
+    border-radius: 5px;
+	border: none;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+	font-weight: bold;
+}
+
+footer h3 {
+    grid-area: footer;
+
+    background-color: rgb(59, 89, 153);
+    margin: 0px;
+    border-radius: 5px 5px 0px 0px;
+    height: 100%;
+    line-height: 50px;
+}
+
+@media (min-width: 740px){
+
+    #formulario form {
+        grid-gap: 5px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 
+            "nome       perfil          perfil"
+            "user       perfil          perfil"
+            "pretencao  perfil          perfil"
+            "sexo       escolaridade    interesses"
+            "1          button          2"
+    }
+
+    #lnome {
+        grid-area: nome;
+    }
+
+    #luser {
+        grid-area: user;
+    }
+
+    #lpretencao {
+        grid-area: pretencao;
+    }
+    
+    #lquestion {
+        grid-area: perfil;
+    }
+
+    #question {
+        height: calc(100% - 51px);
+        padding: 10px;
+    }
+
+    #lsexo {
+        grid-area: sexo;
+    }
+
+    #lescolaridade {
+        grid-area: escolaridade;
+    }
+
+    #linteresses {
+        grid-area: interesses;
+    }
+
+    #button {
+        grid-area: button;
+    }
+}
